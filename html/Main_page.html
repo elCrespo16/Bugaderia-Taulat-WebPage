@@ -36,8 +36,11 @@
 				line-height: 1.2em;
 			}
 			
-			h1{
+			h1, h3{
 				font-family:'Dosis', sans-serif;
+			}
+			h2 {
+				font-family:'Arvo', sans-serif;
 			}
 			div.nav a {
 				display: block;
@@ -49,7 +52,7 @@
 			}
 		
 			a.a_nav:hover{
-				box-shadow: 0 4px 8px 0 #99bbff;
+				box-shadow: 0 4px 8px 0 hsla(233, 37%, 40%, 1);;
 			}
 			div.nav_big{
 				box-shadow: 0 4px 12px 0 rgba(0,0,0,.1);
@@ -70,8 +73,13 @@
 			}
 		
 			@media screen and (max-width: 650px){
+
+				.full_body {
+					width: 100%;
+				}
 				body {
 					margin: 0px;
+					background-color: white;
 				}
 				
 				.container {
@@ -80,6 +88,19 @@
 				
 				h1{
 					font-size: 2em;
+					margin-bottom: 0.5em;
+					margin-top: 0.5em;
+				}
+
+				h2 {
+					text-align: center;
+					margin-bottom: 0.3em;
+					font-size: 1.5em;
+				}
+
+				.a_nav {
+					margin-left: 2%;
+					margin-right: 2%;
 				}
 				
 				.name {
@@ -88,19 +109,17 @@
 					padding: 0.6em;
 				}
 				.nav {
-					width: 100%
+					width: 100%;
 				}
 				.nav_big {
+					width: 100%;
 					margin-bottom:1em;
-				}
-				div.nav a {
-				
 				}
 				.banner{
 					width: 100%;
 					padding: 10%;
 					background-image: url(../Images/posible_banner_5.jpg);
-					background-color: #99ccff;
+					background-color: hsla(215, 62%, 93%, 1);
 					background-size: auto;
 					background-position: center;
 					background-repeat: no-repeat;
@@ -108,7 +127,7 @@
 					position: relative;
 					border: 1px solid rgba(0,0,0,.1);
 				}
-				.big_text {
+				.banner_text {
 					font-family: 'Ubuntu', sans-serif;
 					font-size: 200%;
 					color: rgba(255,255,255,.99);
@@ -121,21 +140,43 @@
 					width:80px;
 					height:auto;
 				}
+
+				.page_body {
+					width: 100%;
+				}
+
+				.advantages {
+					margin-top: 3%;
+					width: 100%;
+					background-color: hsla(206, 8%, 96%, 1);;
+				}
+
+				.plain_text{
+					font-size: 1.15em;
+					font-family: 'Exo 2', sans-serif;
+				}
+				li {
+					list-style-type: square;
+					padding: 2%;
+				}
+				.mobile_vanish{
+					display: none;
+				}
+				strong {
+					color: hsla(233, 45%, 28%, 1);;
+				}
 			}
 		</style>
 	</head>
 	<body>
 		<div class = "container full_body">
 			<!-- Menu de Navegacion -->
-			<nav>
+			<nav class="nav">
 				
 				<div class="container nav_big">
 					<div class ="container name">
 					<a href ="#" target="-self">
 						<h1>Lavandería Taulat</h1>
-					</a>
-					<a href ="#" target="-self">
-						<img src="../Images/logo_prueba.png" class ="logo" >
 					</a>
 					</div>
 					<div class="container nav">
@@ -149,16 +190,43 @@
 							Servicios
 						</a>
 						<a href ="#" target="-self" class = "abous_us a_nav">
-							¿Quiénes somos?
+							Sobre nosotros
 						</a>
 					</div>
 				</div>
 			</nav>
 			<!-- Banner -->
 			<div class="container banner">
-				<h1 class= "big_text">Make it Simple!
+				<h1 class= "banner_text">Make it Simple!
 				</h1>
-				
+			</div>
+			<div class="container page_body">
+				<div class="container advantages">
+					<div class="container">
+						<h2>
+							¿Por qué somos tu mejor eleccion?
+						</h2>
+					</div>
+					<div class="plain_text">
+						<ul>
+							<li>
+								<strong>Ofrecemos lavado normal y lavado en seco.</strong>
+							</li>
+							<li>
+								<strong>Estamos muy cerca de ti.</strong><div class = "mobile_vanish">Somos la única lavandería en el sector de Poblenou.</div>
+							</li>
+							<li>
+								<strong>Disponemos de la mayor rapidez.</strong><div class = "mobile_vanish">Tus prendas estarán listas en una semana o incluso antes.</div>
+							</li>
+							<li>
+								<strong>El cliente es lo más importante.</strong><div class = "mobile_vanish">Tratamos a nuestros clientes como si fueran familia.</div>
+							</li>
+							<li>
+								<strong>Abiertos los 7 dias de la semana.</strong><div class = "mobile_vanish">Disponibilidad 24/7 en Google Business y por teléfono.</div>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
