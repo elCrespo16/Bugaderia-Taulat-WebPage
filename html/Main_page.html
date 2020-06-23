@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Arvo|Dosis|Exo+2|Quicksand|Ubuntu&display=swap" rel="stylesheet">
+		<title>Bugaderia Taulat</title>
+		<style>
+			<!-- Ajustes generales -->
+			* {
+				box-sizing: border-box;
+			}
+			
+			.container {
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+			}
+			
+			a:visited, a:link{
+				text-decoration: none;
+				color: black;
+			}
+			
+			a {
+				display: block;
+				text-align: center;
+				min-width: 47px;
+				min-height: 40px;
+			}
+			nav {
+				font-family: 'Quicksand', sans-serif;
+			}
+			
+			.text {
+				font-size: 16px;
+				line-height: 1.2em;
+			}
+			
+			h1{
+				font-family:'Dosis', sans-serif;
+			}
+			div.nav a {
+				display: block;
+				border-style: none;
+				border-radius: 3px;
+				padding-top: 0.5em;
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+			}
+		
+			a.a_nav:hover{
+				box-shadow: 0 4px 8px 0 #99bbff;
+			}
+			div.nav_big{
+				box-shadow: 0 4px 12px 0 rgba(0,0,0,.1);
+			}
+			.inicio {
+					order: 0;
+			}
+			.services {
+				order: 2;
+			}
+			
+			.contact {
+				order: 3;
+			}
+			
+			.abous_us {
+				order: 1;
+			}
+		
+			@media screen and (max-width: 650px){
+				body {
+					margin: 0px;
+				}
+				
+				.container {
+					justify-content: center;
+				}
+				
+				h1{
+					font-size: 2em;
+				}
+				
+				.name {
+					text-align: center;
+					width: 100%;
+					padding: 0.6em;
+				}
+				.nav {
+					width: 100%
+				}
+				.nav_big {
+					margin-bottom:1em;
+				}
+				div.nav a {
+				
+				}
+				.banner{
+					width: 100%;
+					padding: 10%;
+					background-image: url(../Images/posible_banner_5.jpg);
+					background-color: #99ccff;
+					background-size: auto;
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: cover;
+					position: relative;
+					border: 1px solid rgba(0,0,0,.1);
+				}
+				.big_text {
+					font-family: 'Ubuntu', sans-serif;
+					font-size: 200%;
+					color: rgba(255,255,255,.99);
+					text-align: center;
+					line-height: 1.5em;
+					width: 100%;
+				}
+				.logo {
+					margin-left: 4%;
+					width:80px;
+					height:auto;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class = "container full_body">
+			<!-- Menu de Navegacion -->
+			<nav>
+				
+				<div class="container nav_big">
+					<div class ="container name">
+					<a href ="#" target="-self">
+						<h1>Lavandería Taulat</h1>
+					</a>
+					<a href ="#" target="-self">
+						<img src="../Images/logo_prueba.png" class ="logo" >
+					</a>
+					</div>
+					<div class="container nav">
+						<a href ="#" target="-self" class = "inicio active a_nav">
+							Inicio
+						</a>
+						<a href ="#" target="-self" class = "contact a_nav">
+							Contáctanos
+						</a>
+						<a href ="#" target="-self" class = "services a_nav">
+							Servicios
+						</a>
+						<a href ="#" target="-self" class = "abous_us a_nav">
+							¿Quiénes somos?
+						</a>
+					</div>
+				</div>
+			</nav>
+			<!-- Banner -->
+			<div class="container banner">
+				<h1 class= "big_text">Make it Simple!
+				</h1>
+				
+			</div>
+		</div>
+	</body>
+</html>
