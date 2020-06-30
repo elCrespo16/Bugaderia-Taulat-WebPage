@@ -5,7 +5,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Arvo|Dosis|Exo+2|Quicksand|Ubuntu&display=swap" rel="stylesheet">
 		<title>Bugaderia Taulat</title>
 		<style>
-			<!-- Ajustes generales -->
+			<!-- Ajustes generales
 			* {
 				box-sizing: border-box;
 			}
@@ -14,11 +14,12 @@
 				display: flex;
 				flex-wrap: wrap;
 				flex-direction: row;
+				justify-content: center;
 			}
 			
 			a:visited, a:link{
 				text-decoration: none;
-				color: black;
+				color: inherit;
 			}
 			
 			a {
@@ -26,36 +27,72 @@
 				text-align: center;
 				min-width: 47px;
 				min-height: 40px;
+				align-content: center;
+				justify-content: center;
 			}
-			nav {
+			nav, .plain_text2 {
 				font-family: 'Quicksand', sans-serif;
 			}
-			
-			.text {
-				font-size: 16px;
-				line-height: 1.2em;
+
+			.button{
+				align-content: center;
+				border-style: dotted;
+				border-width: 6px;
+				margin-top: 1%;
+				margin-bottom: 1%;
+				width: 10%;
+				padding-top: 0.5%;
+				font-family:'Quicksand', sans-serif;
+				font-weight: 800;
+				font-size: 125%;
+				background-color: #5a97ed;
+				border-radius: 10px;
+				transition: background-color 1s , border-style 1s;
+
+			}
+			.button:hover{
+				background-color: #80bfff;
+				border-style: solid;
 			}
 			
-			h1, h3{
+			strong {
+				color: hsla(233, 45%, 28%, 1);
+			}
+			h1{
+				font-family: 'Ubuntu', sans-serif;
+			}
+			h3{
 				font-family:'Dosis', sans-serif;
 			}
 			h2 {
+				margin: 15px;
 				font-family:'Arvo', sans-serif;
 			}
-			div.nav a {
-				display: block;
-				border-style: none;
-				border-radius: 3px;
-				padding-top: 0.5em;
-				padding-left: 0.5em;
-				padding-right: 0.5em;
+			
+			div.a_nav div a{
+				box-shadow: none;
+				border-radius: 5px 5px 5px 5px;
+				transition: box-shadow 0.75s;
 			}
-		
-			a.a_nav:hover{
-				box-shadow: 0 4px 8px 0 hsla(233, 37%, 40%, 1);;
+
+			div.a_nav div a:hover{
+				box-shadow: 0px 0px 8px 0px #b3d9ff;
+				border-radius: 5px 5px 5px 5px;
 			}
-			div.nav_big{
+			nav.full {
 				box-shadow: 0 4px 12px 0 rgba(0,0,0,.1);
+			}
+			table{
+				box-shadow: 0 4px 12px 0 rgba(0,0,0,.1);
+				border-radius: 5px;
+			}
+			#th1{
+				box-shadow: 0 4px 12px 0 rgba(0,0,0,.1);
+				border-radius: 5px 0px 0px 5px;
+			}
+			#th2{
+				box-shadow: 0 4px 12px 0 rgba(0,0,0,.1);
+				border-radius: 0px 5px 5px 0px;
 			}
 			.inicio {
 					order: 0;
@@ -71,163 +108,509 @@
 			.abous_us {
 				order: 1;
 			}
+			.full {
+				width: 100%;
+			}
+			.centered{
+				justify-content: center;
+  				align-items: center;
+			}
+			.b_black{
+				background-color:  #333333;
+			}
+			.font_white{
+				color: white;
+			}
+			div.footer div a:hover{
+				color: gray;
+			}
+			.text_align_center {
+				text-align: center;
+			}
+			.text_centered and .half{
+				width: 46%;
+				margin-left: 4%;
+				text-align: justify;
+			}
+			.plain_text{
+				font-family: 'Exo 2', sans-serif;
+			}
+			li {
+				list-style-type: square;
+				padding: 2%;
+			}
+
+			.banner{
+				background-image: url(../Images/b5.jpg);
+				background-color: hsla(215, 62%, 93%, 1);
+				background-size: auto;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+				border: 1px solid rgba(0,0,0,.1);
+			}
+			.banner_text {
+				font-family: 'Ubuntu', sans-serif;
+				text-align: center;
+				line-height: 1.5em;
+			}
+
+			h2, h1{
+				text-align: center;
+			}
+
+			body {
+				background-color: white;
+			}
+			table, tr, td, th{
+				border-collapse: collapse;
+				
+			}
+			#td1{
+				border-radius: 0px 0px 5px 0px;
+			}
+			#td2{
+				border-radius: 0px 0px 0px 5px;
+			}
+				
+			ul{
+				margin-top: 1%;
+				margin-bottom: 1%;
+			}
+
+			th{
+				background-color: rgba(16, 16, 16, 0.95);
+				color: #eaf6ff;
+				margin: 0px;
+				padding: 3%;
+			}
+			tr:nth-child(even) {
+  				background-color: #cce6ff;
+			}
+			td{
+				text-align: center;
+				padding: 2%;
+			}
+
+			
+			@media screen and (min-width: 1280px) {
+				.body {
+					margin: auto;
+					width: 1124px;
+				}
+			}
+
+			@media screen and (min-width: 651px) {
+				.half{
+					width: 50%;
+				}
+				.padded {
+					padding-left: 0%;
+					padding-right: 0%;
+				}
+				.full_margin {
+					margin: 1%;
+				}
+				.img{
+					margin: 4%;
+					width: 80%;
+				}
+				.one_forth {
+					width: 20%;
+				}
+				h1{
+					font-size: 2.3em;
+					margin-bottom: 0.5em;
+					margin-top: 0.5em;
+				}
+				h2 {
+					margin-bottom: 0.3em;
+					font-size: 1.75em;
+				}
+				.a_nav {
+					margin-left: 2%;
+					margin-right: 2%;
+				}
+				.banner_text{
+					font-size: 250%;
+				}
+				.name {
+					padding: 0.7em;
+				}
+				.margin_bottom {
+					margin-bottom: 0.1em;
+				}
+				.banner{
+					padding: 10%;
+				}
+				.advantages {
+					margin-top: 3%;
+					background-color: hsla(206, 8%, 96%, 1);
+				}
+				.padding_bottom{
+					padding-bottom: 1.2em;
+				}
+				.plain_text{
+					font-size: 1.2em;
+				}
+				.plain_text2{
+					font-size: 20px;
+					line-height: 1.1em;
+				}
+				li {
+					padding: 0.5%;
+				}
+				.padded {
+					padding-left: 2%;
+					padding-right: 2%;
+				}
+			}
 		
 			@media screen and (max-width: 650px){
-
-				.full_body {
-					width: 100%;
-				}
 				body {
 					margin: 0px;
-					background-color: white;
 				}
 				
-				.container {
-					justify-content: center;
+				.text_centered{
+					padding-left: 1%;
 				}
-				
+
 				h1{
 					font-size: 2em;
 					margin-bottom: 0.5em;
 					margin-top: 0.5em;
 				}
-
 				h2 {
-					text-align: center;
 					margin-bottom: 0.3em;
 					font-size: 1.5em;
 				}
-
+				.full_margin {
+					margin: 2%;
+				}
 				.a_nav {
 					margin-left: 2%;
 					margin-right: 2%;
 				}
-				
+				.banner_text{
+					font-size: 200%;
+				}
 				.name {
-					text-align: center;
-					width: 100%;
 					padding: 0.6em;
 				}
-				.nav {
-					width: 100%;
-				}
-				.nav_big {
-					width: 100%;
-					margin-bottom:1em;
+				.margin_bottom {
+					margin-bottom: 1.3em;
 				}
 				.banner{
-					width: 100%;
 					padding: 10%;
-					background-image: url(../Images/posible_banner_5.jpg);
-					background-color: hsla(215, 62%, 93%, 1);
-					background-size: auto;
-					background-position: center;
-					background-repeat: no-repeat;
-					background-size: cover;
-					position: relative;
-					border: 1px solid rgba(0,0,0,.1);
 				}
-				.banner_text {
-					font-family: 'Ubuntu', sans-serif;
-					font-size: 200%;
-					color: rgba(255,255,255,.99);
-					text-align: center;
-					line-height: 1.5em;
-					width: 100%;
-				}
-				.logo {
-					margin-left: 4%;
-					width:80px;
-					height:auto;
-				}
-
-				.page_body {
-					width: 100%;
-				}
-
 				.advantages {
 					margin-top: 3%;
-					width: 100%;
-					background-color: hsla(206, 8%, 96%, 1);;
+					background-color: hsla(206, 8%, 96%, 1);
 				}
-
+				.padding_bottom{
+					padding-bottom: 1em;
+				}
 				.plain_text{
 					font-size: 1.15em;
-					font-family: 'Exo 2', sans-serif;
+				}
+				.plain_text2{
+					font-size: 17px;
+					line-height: 1.2em;
 				}
 				li {
-					list-style-type: square;
 					padding: 2%;
 				}
-				.mobile_vanish{
+				.mobile_vanish, .tablet_vanish{
 					display: none;
 				}
-				strong {
-					color: hsla(233, 45%, 28%, 1);;
+				.half{
+					width: 100%;
+				}
+				.padded {
+					padding-left: 2%;
+					padding-right: 2%;
+				}
+				.img{
+					width: 80%;
 				}
 			}
 		</style>
 	</head>
-	<body>
-		<div class = "container full_body">
+	<body class="container">
+		<div class = "container full">
 			<!-- Menu de Navegacion -->
-			<nav class="nav">
-				
-				<div class="container nav_big">
-					<div class ="container name">
-					<a href ="#" target="-self">
-						<h1>Lavandería Taulat</h1>
-					</a>
+			<nav class="full margin_bottom b_black font_white">
+				<div class="container full">
+					<div class ="full">
+						<a href ="#" target="-self">
+							<h1>Lavandería Taulat</h1>
+						</a>
 					</div>
-					<div class="container nav">
-						<a href ="#" target="-self" class = "inicio active a_nav">
-							Inicio
-						</a>
-						<a href ="#" target="-self" class = "contact a_nav">
-							Contáctanos
-						</a>
-						<a href ="#" target="-self" class = "services a_nav">
-							Servicios
-						</a>
-						<a href ="#" target="-self" class = "abous_us a_nav">
-							Sobre nosotros
-						</a>
+					<div class="container centered full a_nav">
+						<div class="inicio one_forth full_margin">
+							<a href ="#" target="-self" class="container">
+								Inicio
+							</a>
+						</div>
+						<div class="contact one_forth full_margin">
+							<a href ="#" target="-self" class="container">
+								Contáctanos
+							</a>
+						</div>
+						<div class="services one_forth full_margin">
+							<a href ="#" target="-self" class="container">
+								Servicios
+							</a>
+						</div>
+						<div class="abous_us one_forth full_margin">
+							<a href ="#" target="-self" class="container">
+								Sobre nosotros
+							</a>
+						</div>
 					</div>
 				</div>
 			</nav>
-			<!-- Banner -->
-			<div class="container banner">
-				<h1 class= "banner_text">Make it Simple!
-				</h1>
-			</div>
-			<div class="container page_body">
-				<div class="container advantages">
-					<div class="container">
-						<h2>
-							¿Por qué somos tu mejor eleccion?
-						</h2>
+			<div class="container full body">
+				<!-- Banner -->
+				<div class="container banner full">
+					<h1 class= "banner_text font_white">Make it Simple!
+					</h1>
+				</div>
+				<!-- Body -->
+				<div class="container full">
+					<div class="container advantages full">
+						<div class="full">
+							<h2>
+								¿Por qué somos tu mejor eleccion?
+							</h2>
+						</div>
+						<div class="plain_text full centered">
+							<ul>
+								<li>
+									<strong>Ofrecemos lavado normal y lavado en seco.</strong>
+								</li>
+								<li>
+									<strong>Somos la única lavandería en el sector de Poblenou.
+										<strong class = "mobile_vanish">
+											
+										</strong>
+									</strong>
+								</li>
+								<li>
+									<strong>Tus prendas estarán listas en una semana o incluso antes. 
+										<strong class = "mobile_vanish">
+											Tambien tienes la posibilidad de recogerlas más tarde
+										</strong>
+									</strong>
+								</li>
+								<li>
+									<strong>El cliente es nuestra mayor prioridad. 
+										<strong class = "mobile_vanish">
+											Tratamos a nuestros clientes como si fueran familia.
+										</strong>
+									</strong>
+								</li>
+								<li>
+									<strong>Abiertos los 7 dias de la semana. 
+										<strong class = "mobile_vanish">
+											Disponibilidad 24/7 en Google Business y por teléfono.
+										</strong>
+									</strong>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<div class="plain_text">
-						<ul>
-							<li>
-								<strong>Ofrecemos lavado normal y lavado en seco.</strong>
-							</li>
-							<li>
-								<strong>Estamos muy cerca de ti.</strong><div class = "mobile_vanish">Somos la única lavandería en el sector de Poblenou.</div>
-							</li>
-							<li>
-								<strong>Disponemos de la mayor rapidez.</strong><div class = "mobile_vanish">Tus prendas estarán listas en una semana o incluso antes.</div>
-							</li>
-							<li>
-								<strong>El cliente es lo más importante.</strong><div class = "mobile_vanish">Tratamos a nuestros clientes como si fueran familia.</div>
-							</li>
-							<li>
-								<strong>Abiertos los 7 dias de la semana.</strong><div class = "mobile_vanish">Disponibilidad 24/7 en Google Business y por teléfono.</div>
-							</li>
-						</ul>
+
+					<div class="container full">
+						<div class="full centered margin_bottom">
+							<h2>
+								Servicio a particulares
+							</h2>
+						</div>
+						<div class="container half centered">
+							<img src="../Images/pantalones.jpg" alt="Servicio a particulares" class="img"> 
+						</div>
+						<div class="half plain_text2 text_centered">
+							<p>
+								Ofrecemos servicio de tintoreria, 
+								lavado normal y lavado de edredones.
+							</p>
+							<p class="mobile_vanish">
+								Tratamos tu ropa con el mayor cuidado posible, 
+								usamos productos que no dañan el tejido para que
+								las prendas se vean como el primer dia.
+							</p>
+							<p class="tablet_vanish">
+
+							</p>
+						</div>
+						<div class="mobile_vanish half centered plain_text2">
+							<table>
+								<tr>
+									<th id="th1">
+										Producto
+									</th>
+									<th id="th2">
+										Precio
+									</th>
+								</tr>
+								<tr>
+									<td>
+										Americana
+									</td>
+									<td>
+										9 €
+									</td>
+								<tr>
+									<td>
+										Abrigo
+									</td>
+									<td>
+										12 €
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Alfombra
+									</td>
+									<td>
+										9 €/Metro cuadrado 
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Camiseta
+									</td>
+									<td>
+										3 €
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Camisa
+									</td>
+									<td>
+										3.5 €
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Edredon matrimonial
+									</td>
+									<td>
+										16 €
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Pantalón
+									</td>
+									<td>
+										6 €
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Traje (Americana y Pantalón)
+									</td>
+									<td>
+										14 €
+									</td>
+								</tr>
+								<tr class="last_tr">
+									<td id="td2">
+										Vestido
+									</td>
+									<td id="td1">
+										12 €
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="container full">
+							<a href="#" target="-self" class="button"> 
+								Más info
+							</a>
+						</div>
+					</div>
+
+					<div class="container full">
+						<div class="full margin_bottom">
+							<h2>
+								Servicio a empresas
+							</h2>
+						</div>
+						<div class="container half">
+							<img src="../Images/mesas.jpg" alt="Servicio a Empresas" class="img"> 
+						</div>
+						<div class="half plain_text2 text_centered">
+							<p>Si te dedicas al negocio de la hosteleria, la restauración,
+								tienes un spa, un gimnasio o una residencia, nosotros podemos ofrecerte el servicio
+								de lavado y planchado industrial o tambien el servicio de renting.
+							</p>
+							<p class="mobile_vanish">
+								Trabajamos de lunes a domingos, ofrecemos recogida y entrega directa en el local.<br>
+								Contacta con nosotros y te enviaremos un presupuesto sin compromiso.
+							</p>
+							<p class="tablet_vanish">
+
+							</p>
+						</div>
+						<div class="container full">
+							<a href="#" target="-self" class="button"> 
+								Más info
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
+			<!-- Footer -->
+			<footer class="container full">
+				<div class="container full b_black centered font_white plain_text2">
+					<div class="container full margin_bottom">
+						<h1>
+							Lavandería Taulat
+						</h1>
+					</div>
+					<div class="half">
+						<div class="container full footer">
+							<div class="full">
+								<a href ="#" target="-self">
+									Inicio
+								</a>
+							</div>
+							<div class="full">
+								<a href ="#" target="-self">
+									Contáctanos
+								</a>
+							</div>
+							<div class="full">
+								<a href ="#" target="-self">
+									Servicios
+								</a>
+							</div>
+							<div class="full">
+								<a href ="#" target="-self">
+									Sobre nosotros
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="container half">
+						<div class="full text_align_center margin_bottom">
+							Calle: Taulat nº 46
+						</div>
+						<div class="full text_align_center margin_bottom">
+							Tel: 931 79 54 79
+						</div>
+						<div class="full">
+							<a href="mailto:info@bugaderiataulat.com">info@bugaderiataulat.com</a>
+						</div>
+					</div>
+				</div>
+			</footer>
 		</div>
 	</body>
 </html>
