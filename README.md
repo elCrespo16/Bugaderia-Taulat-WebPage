@@ -14,3 +14,5 @@ https://guides.github.com/introduction/git-handbook/#basic-git
 https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
 
 https://wearejeff.com/es/
+
+https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
