@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Arvo|Dosis|Exo+2|Quicksand|Ubuntu&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="./Css/style.css">
+		<link rel="shortcut icon" href="./Images/logo_taulat.jpg" width="48px" height="48px" type="image/x-icon"/>
+		<title>Bugaderia Taulat</title>
+		<script>
+			var usedCode = false;
+			
+			function debug(){
+				window.localStorage.clear();
+			}
+
+            function checkCode(){
+				usedCode = JSON.parse(window.localStorage.getItem('usedCode'));
+				if(usedCode){
+					document.getElementById("disCodeText").innerHTML = "Ya has usado tu codigo";
+				}
+			}
+			function randomCode(length) {
+				var result           = '';
+				var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+				var charactersLength = characters.length;
+				for ( var i = 0; i < length; i++ ) {
+					result += characters.charAt(Math.floor(Math.random() * charactersLength));
+				}
+   				return result;
+			}
+
+			function handlerCode() {
+				if(!usedCode){
+					document.getElementById("disCodeText").innerHTML = randomCode(5);
+					document.getElementById("smallText").innerHTML = "*guarda este codigo antes de recargar la pagina o lo perderás";
+					usedCode = true;
+					window.localStorage.setItem('usedCode', usedCode);
+				}
+			}
+        </script>
+	</head>
+	<body class="container">
+		<div class = "container full">
+			<!-- Menu de Navegacion -->
+			<nav class="container full margin_bottom b_black font_white">
+				<div class="container full body">
+					<div class ="full">
+						<a href ="#" target="-self">
+							<h1>Lavandería Taulat</h1>
+						</a>
+					</div>
+					<div class="container centered full a_nav">
+						<div class="inicio one_forth full_margin">
+							<a href ="#" target="-self" class="container">
+								Inicio
+							</a>
+						</div>
+						<div class="contact one_forth full_margin">
+							<a href ="#" target="-self" class="container">
+								Contáctanos
+							</a>
+						</div>
+						<div class="services one_forth full_margin">
+							<a href ="#" target="-self" class="container">
+								Servicios
+							</a>
+						</div>
+						<div class="abous_us one_forth full_margin">
+							<a href ="sobre_nosotros.html" target="-self" class="container">
+								Sobre nosotros
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div class="container full body margin_top">
+				<!-- Banner -->
+				<div class="container banner full">
+					<h1 class= "banner_text font_white">Make it Simple!
+					</h1>
+				</div>
+				<!-- Body -->
+				<main class="container full">
+					<div class="container advantages full">
+						<div class="full">
+							<h2>
+								¿Por qué somos tu mejor eleccion?
+							</h2>
+						</div>
+						<div class="plain_text full centered">
+							<ul>
+								<li>
+									<strong>Ofrecemos lavado normal y lavado en seco.</strong>
+								</li>
+								<li>
+									<strong>Somos la única lavandería en el sector de Poblenou.
+										<strong class = "mobile_vanish">
+											Tenemos más de 10 años de experiencia.
+										</strong>
+									</strong>
+								</li>
+								<li>
+									<strong>Tus prendas estarán listas en una semana o incluso antes. 
+										<strong class = "mobile_vanish">
+											Tambien tienes la posibilidad de recogerlas más tarde
+										</strong>
+									</strong>
+								</li>
+								<li>
+									<strong>El cliente es nuestra mayor prioridad. 
+										<strong class = "mobile_vanish">
+											Tratamos a nuestros clientes como si fueran familia.
+										</strong>
+									</strong>
+								</li>
+								<li>
+									<strong>Abiertos los 7 dias de la semana. 
+										<strong class = "mobile_vanish">
+											Disponibilidad 24/7 en Google Business y por teléfono.
+										</strong>
+									</strong>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="container full">
+						<div class="full centered margin_bottom">
+							<h2>
+								Servicio a particulares
+							</h2>
+						</div>
+						<div class="container half centered">
+							<img src="./Images/pantalones.jpg" alt="Servicio a particulares" class="img"> 
+						</div>
+						<div class="half plain_text2 text_centered padded_vertical">
+							<p class="container">
+								Ofrecemos servicio de tintoreria, 
+								lavado normal y lavado de edredones.
+							</p>
+							<p class="mobile_vanish">
+								Tratamos tu ropa con el mayor cuidado posible, 
+								usamos productos que no dañan el tejido para que
+								las prendas se vean como el primer dia.
+							</p>
+							<br>
+							<p class="tablet_vanish">
+								Tambien ofrecemos el mejor servicio de lavado de alfombras y edredones de todos los tamaños.<br>
+									<b>¡No te preocupes por ellos y recógelos al acabar el verano!</b>
+							</p>
+						</div>
+						<div class="mobile_vanish half centered plain_text2">
+							<table>
+								<tr>
+									<th id="th1">
+										Producto
+									</th>
+									<th id="th2">
+										Precio
+									</th>
+								</tr>
+								<tr>
+									<td>
+										Americana
+									</td>
+									<td>
+										9 €
+									</td>
+								<tr>
+									<td>
+										Abrigo
+									</td>
+									<td>
+										12 €
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Alfombra
+									</td>
+									<td>
+										9 €/Metro cuadrado 
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Camiseta
+									</td>
+									<td>
+										3 €
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Camisa
+									</td>
+									<td>
+										3.5 €
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Edredon matrimonial
+									</td>
+									<td>
+										16 €
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Pantalón
+									</td>
+									<td>
+										6 €
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Traje (Americana y Pantalón)
+									</td>
+									<td>
+										14 €
+									</td>
+								</tr>
+								<tr class="last_tr">
+									<td id="td2">
+										Vestido
+									</td>
+									<td id="td1">
+										12 €
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="container full margin_bottom margin_top" id="disBut">
+							<div class="button style-1">		
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>	
+								<span><a href="#">Más info</a></span>
+							</div>
+						</div>
+						<small id="smallText"></small>
+					</div>
+
+					<div class="container full">
+						<div class="full margin_bottom">
+							<h2>
+								Servicio a empresas
+							</h2>
+						</div>
+						<div class="container half">
+							<img src="./Images/mesas.jpg" alt="Servicio a Empresas" class="img"> 
+						</div>
+						<div class="half plain_text2 text_centered padded_vertical">
+							<p>Si te dedicas al negocio de la hosteleria, la restauración,<i class="tablet_vanish">
+								tienes un spa, un gimnasio o una residencia,</i> nosotros podemos ofrecerte el servicio
+								de lavado y planchado industrial o tambien el servicio de renting.
+							</p>
+							<br>
+							<p class="mobile_vanish">
+								Trabajamos de lunes a domingos, ofrecemos recogida y entrega directa en el local.<br>
+								<i class="tablet_vanish">Contacta con nosotros y te enviaremos un presupuesto sin compromiso.</i>
+							</p>
+							<br>
+							<p class="tablet_vanish">
+								<strong>Nos adaptamos a vuestro horario de apertura para realizar la recogida y la entrega de la ropa.</strong> 
+							</p>
+						</div>
+						<div class="container full margin_bottom margin_top">
+							<div class="button style-1">		
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>	
+								<span><a href="#">Más info</a></span>
+							</div>
+						</div>
+					</div>
+				</main>
+			</div>
+			<!-- Footer -->
+			<footer class="container full margin_top b_black">
+				<div class="container full  centered font_white plain_text2 body">
+					<div class="container full margin_bottom">
+						<h1>
+							Lavandería Taulat
+						</h1>
+					</div>
+					<div class="half margin_top">
+						<div class="container full footer">
+							<div class="full">
+								<a href ="#" target="-self">
+									Inicio
+								</a>
+							</div>
+							<div class="full">
+								<a href ="#" target="-self">
+									Contáctanos
+								</a>
+							</div>
+							<div class="full">
+								<a href ="#" target="-self">
+									Servicios
+								</a>
+							</div>
+							<div class="full">
+								<a href ="sobre_nosotros.html" target="-self">
+									Sobre nosotros
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="container half left_border margin_bottom">
+						<div class="full text_align_center margin_bottom">
+							Calle: Taulat nº 46
+						</div>
+						<div class="full text_align_center margin_bottom">
+							Tel: 931 79 54 79
+						</div>
+						<div class="full">
+							<a href="mailto:info@bugaderiataulat.es">info@bugaderiataulat.es</a>
+						</div>
+					</div>
+					<div class="full text_align_center margin_bottom" style="margin-bottom: 20px;">
+						Pagina Web diseñada por <a style="display: inline"href="http://valkdesigns.es/">Valk Designs.</a>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
