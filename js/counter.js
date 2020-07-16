@@ -1,8 +1,9 @@
-var number = 0;
+var number = 1500;
 var startCounting = false;
 
 onmessage = function (oEvent) {
     number = oEvent.data;
+    startCounting = true;
 };
 
 function addNpost(){
@@ -13,5 +14,5 @@ function addNpost(){
 function counter () {
     setInterval(addNpost,150);
 }
-
+while(!startCounting){}
 counter();

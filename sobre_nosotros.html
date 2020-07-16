@@ -19,10 +19,9 @@
 					w.onmessage = function(event) {
 						counter = (event.data).toFixed(1);
 						result.innerText = counter;
-						window.localStorage.setItem('counter', counter);
 					};
 				} else {
-					result.innerHTML = "Más de " + counter + "metros cuadrados de bolsas";
+					result.innerHTML = "Más de " + counter + "miles de litros";
 				}
 			}
 			function saveCounter (){
@@ -93,10 +92,11 @@
 				<div class="container full">
 					<h2 class="full centered">Nuestro compromiso con el medio ambiente</h2>
 					<p class="plain_text2 full">Somos concientes de que el planeta es <b>nuestro único hogar</b> y tenemos que <b>cuidarlo</b>.
-						<i class="mobile_vanish inherit_text"> Nuestra mayor prioridad es emitir la menor cantidad de residuos posibles sin descuidar
+						<i class="mobile_vanish inherit_text"> Nuestra mayor prioridad es emitir la menor cantidad de residuos y usar la menor cantidad de agua posible sin descuidar
 							en ningún momento la calidad de nuestro servicio.
 						</i>
 						<i class="tablet_vanish">Los residuos que producimos se reciclan adecuadamente.</i>
+						<i class="tablet_vanish">Usamos maquinas muy eficientes en el consumo de agua y gas.</i>
 					</p>
 				</div>
 				<div class="container full">
@@ -105,7 +105,7 @@
 				<script>
 					(function doStuff(){
 						var lastCounter = JSON.parse(window.localStorage.getItem('counter'));
-						if(lastCounter === undefined){
+						if(lastCounter === undefined || lastCounter < 1500){
 							counter = 1500.0;
 						}
 						else {
