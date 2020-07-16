@@ -4,35 +4,46 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 		<link href="https://fonts.googleapis.com/css?family=Arvo|Dosis|Exo+2|Quicksand|Ubuntu&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="./Css/style.css">
-		<link rel="shortcut icon" href="./Images/logo_taulat.jpg" width="48px" height="48px" type="image/x-icon"/>
+		<link rel="shortcut icon" href="./images/logo_taulat.jpg" width="48px" height="48px" type="image/x-icon"/>
         <title>¿Quiénes Somos?</title>
         <script>
-			var w;
-			var counter = 0.0;
+			var w, vari = 20;
+			var counter = 1500;
 			var result = document.getElementById("Result");
+			var smalltext = document.getElementById("closed");
 			window.onbeforeunload = function () {
 				  saveCounter();
 			};
 			function startWorker() {
-				if (typeof(Worker) !== "undefined") {
-					if (typeof(w) == "undefined") {
-						w = new Worker("./js/counter.js");
-						w.postMessage(counter);
+				var hours = new Date;
+				console.log(hours.getHours());
+				if(!(hours.getHours() < 10 || hours.getHours() > 14)){
+					if (typeof(Worker) !== "undefined") {
+						if (typeof(w) == "undefined") {
+							w = new Worker("./js/counter.js");
+							w.postMessage(counter);
+
+						}
+						w.onmessage = function(event) {
+							console.log((event.data).toFixed(1));
+							counter = (event.data).toFixed(1);
+							result.innerText = counter;
+						};
+					} 
+					else {
+						result.innerHTML =  counter;
 					}
-					w.onmessage = function(event) {
-						console.log((event.data).toFixed(1));
-						counter = (event.data).toFixed(1);
-						result.innerText = counter;
-					};
-				} else {
-					result.innerHTML = "Más de " + counter + "miles de litros";
 				}
+				else {
+					smalltext.innerText =  "*Ahora mismo estamos cerrados";
+
+				}
+				
 			}
 			function saveCounter (){
 				if(counter !== undefined) {
 					window.localStorage.setItem('counter', counter);
 				}
-				alert("Unload Window");
 			}
 
         </script>
@@ -49,18 +60,13 @@
 					</div>
 					<div class="container centered full a_nav">
 						<div class="inicio one_forth full_margin">
-							<a href ="index.html" target="-self" class="container">
+							<a href ="./index.html" target="-self" class="container">
 								Inicio
 							</a>
 						</div>
 						<div class="contact one_forth full_margin">
 							<a href ="#" target="-self" class="container">
 								Contáctanos
-							</a>
-						</div>
-						<div class="services one_forth full_margin">
-							<a href ="#" target="-self" class="container">
-								Servicios
 							</a>
 						</div>
 						<div class="abous_us one_forth full_margin">
@@ -90,7 +96,7 @@
                     </div>
                     <div class="container half">
                         <figure>
-                            <img src="./Images/colada.jpg" alt="Colada" class="img"> 
+							<img src="./images/colada.jpg" alt="Colada" class="img" style="background-color:  hsla(215, 62%, 93%, 1);"> 
                         </figure>
                     </div>
 				</div>
@@ -103,20 +109,42 @@
 						<i class="tablet_vanish">Los residuos que producimos se reciclan adecuadamente.</i>
 						<i class="tablet_vanish">Usamos maquinas muy eficientes en el consumo de agua y gas.</i>
 					</p>
+					<div class="container">
+						<figure class="container">
+							<img src="./images/planta.jpg" alt="planta" class="img container" id="planta" style="background-color:  hsla(215, 62%, 93%, 1);"> 
+						</figure>
+					</div>
+					
 				</div>
-				<div class="container full">
-					<div id="Result"></div>
+				<div class="container full b_blue">
+					<div class="container half centered plain_text font_white">
+						<div class="container centered">
+							<img src="./images/gota_agua_fondo.png" id="casita">
+						</div>
+						<h2 class="font_white half-fixed">
+							Llevamos <div id="Result"></div> litros ahorrados.
+						</h2>
+						<small id="closed" class="plain_text2"></small>
+					</div>
+					<div class="half container centered mobile_vanish">
+						<div class="container centered">
+							<img src="./images/corazon.png" id="casita">
+						</div>
+						<h2 class="font_white half_fixed">Y todo gracias a ti.</h2>
+					</div>
+					<h2 class="full font_white">Sigue trabajando con nosotros para cuidar el planeta</h2>
 				</div>
 				<script>
 					(function doStuff(){
 						var lastCounter = JSON.parse(window.localStorage.getItem('counter'));
-						if(lastCounter === undefined){
-							counter = 1500.0;
+						if(lastCounter === undefined || lastCounter < 1500.0){
+							counter = 1500.0 + Math.floor(Math.random() * vari);
 							window.localStorage.setItem('counter', counter);
 						}
 						else {
 							counter = lastCounter;
 						}
+						smalltext = document.getElementById("closed");
 						result = document.getElementById("Result");
 						result.innerText = counter;
 						startWorker();
@@ -145,11 +173,6 @@
 							</div>
 							<div class="full">
 								<a href ="#" target="-self">
-									Servicios
-								</a>
-							</div>
-							<div class="full">
-								<a href ="#" target="-self">
 									Sobre nosotros
 								</a>
 							</div>
@@ -157,7 +180,7 @@
 					</div>
 					<div class="container half left_border">
 						<div class="full text_align_center margin_bottom">
-							Calle: Taulat nº 46
+							Calle: Taulat nº 44
 						</div>
 						<div class="full text_align_center margin_bottom">
 							Tel: 931 79 54 79
