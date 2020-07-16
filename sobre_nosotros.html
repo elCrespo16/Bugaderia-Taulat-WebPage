@@ -8,8 +8,11 @@
         <title>¿Quiénes Somos?</title>
         <script>
 			var w;
-			var counter = 1500.0;
+			var counter = 0.0;
 			var result = document.getElementById("Result");
+			window.onbeforeunload = function () {
+				  saveCounter();
+			};
 			function startWorker() {
 				if (typeof(Worker) !== "undefined") {
 					if (typeof(w) == "undefined") {
@@ -17,6 +20,7 @@
 						w.postMessage(counter);
 					}
 					w.onmessage = function(event) {
+						console.log((event.data).toFixed(1));
 						counter = (event.data).toFixed(1);
 						result.innerText = counter;
 					};
@@ -28,6 +32,7 @@
 				if(counter !== undefined) {
 					window.localStorage.setItem('counter', counter);
 				}
+				alert("Unload Window");
 			}
 
         </script>
@@ -105,13 +110,13 @@
 				<script>
 					(function doStuff(){
 						var lastCounter = JSON.parse(window.localStorage.getItem('counter'));
-						if(lastCounter === undefined || lastCounter < 1500){
+						if(lastCounter === undefined){
 							counter = 1500.0;
+							window.localStorage.setItem('counter', counter);
 						}
 						else {
 							counter = lastCounter;
 						}
-						window.localStorage.setItem('counter', counter);
 						result = document.getElementById("Result");
 						result.innerText = counter;
 						startWorker();
