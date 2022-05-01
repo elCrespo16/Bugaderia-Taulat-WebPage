@@ -1,2 +1,4 @@
-./images_google/
-./images/*.svg
+/images_google/
+/images/*.svg
+/images/*.zip
+

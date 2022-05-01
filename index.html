@@ -7,37 +7,7 @@
 		<link rel="shortcut icon" href="./images/logo_taulat.jpg" width="48px" height="48px" type="image/x-icon"/>
 		<title>Bugaderia Taulat</title>
 		<script>
-			var usedCode = false;
-			
-			function debug(){
-				window.localStorage.clear();
-			}
-
-            function checkCode(){
-				usedCode = JSON.parse(window.localStorage.getItem('usedCode'));
-				if(usedCode){
-					document.getElementById("disCodeText").innerHTML = "Ya has usado tu codigo";
-				}
-			}
-			function randomCode(length) {
-				var result           = '';
-				var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-				var charactersLength = characters.length;
-				for ( var i = 0; i < length; i++ ) {
-					result += characters.charAt(Math.floor(Math.random() * charactersLength));
-				}
-   				return result;
-			}
-
-			function handlerCode() {
-				if(!usedCode){
-					document.getElementById("disCodeText").innerHTML = randomCode(5);
-					document.getElementById("smallText").innerHTML = "*guarda este codigo antes de recargar la pagina o lo perderás";
-					usedCode = true;
-					window.localStorage.setItem('usedCode', usedCode);
-				}
-			}
-        </script>
+		</script>
 	</head>
 	<body class="container">
 		<div class = "container full">
@@ -51,18 +21,23 @@
 					</div>
 					<div class="container centered full a_nav">
 						<div class="inicio one_forth full_margin">
-							<a href ="#" target="-self" class="container">
+							<a href ="index.html" target="_self" class="container">
 								Inicio
 							</a>
 						</div>
 						<div class="contact one_forth full_margin">
-							<a href ="#" target="-self" class="container">
+							<a href ="contacto.html" target="_self" class="container">
 								Contáctanos
 							</a>
 						</div>
 						<div class="abous_us one_forth full_margin">
-							<a href ="sobre_nosotros.html" target="-self" class="container">
+							<a href ="sobre_nosotros.html" target="_self" class="container">
 								Sobre nosotros
+							</a>
+						</div>
+						<div class="services one_forth full_margin">
+							<a href ="servicios.html" target="_self" class="container">
+								Servicios
 							</a>
 						</div>
 					</div>
@@ -109,7 +84,7 @@
 									</strong>
 								</li>
 								<li>
-									<strong>Abiertos los 7 dias de la semana. 
+									<strong>Abiertos de lunes a sábados. 
 										<strong class = "mobile_vanish">
 											Disponibilidad 24/7 en Google Business y por teléfono.
 										</strong>
@@ -125,11 +100,11 @@
 							</h2>
 						</div>
 						<div class="container half centered">
-							<img src="./Images/pantalones.jpg" alt="Servicio a particulares" class="img"> 
+							<img src="./images/pantalones.jpg" alt="Servicio a particulares" class="img" style="background-color:  hsla(215, 62%, 93%, 1);"> 
 						</div>
 						<div class="half plain_text2 text_centered padded_vertical">
 							<p class="container">
-								Ofrecemos servicio de tintoreria, 
+								Ofrecemos servicio de tintorería, 
 								lavado normal y lavado de edredones.
 							</p>
 							<p class="mobile_vanish">
@@ -139,11 +114,11 @@
 							</p>
 							<br>
 							<p class="tablet_vanish">
-								Tambien ofrecemos el mejor servicio de lavado de alfombras y edredones de todos los tamaños.<br>
+								Tambien ofrecemos el mejor servicio de lavado de alfombras y edredones de todos los tamaños.<br><br>
 									<b>¡No te preocupes por ellos y recógelos al acabar el verano!</b>
 							</p>
 						</div>
-						<div class="mobile_vanish half centered plain_text2">
+						<div class="mobile_vanish half container centered plain_text2">
 							<table>
 								<tr>
 									<th class="first_th">
@@ -238,7 +213,7 @@
 								<i></i>
 								<i></i>
 								<i></i>	
-								<span><a href="#">Más info</a></span>
+								<span><a href="servicios.html#particulares" target="_self">Más info</a></span>
 							</div>
 						</div>
 						<small id="smallText"></small>
@@ -251,7 +226,7 @@
 							</h2>
 						</div>
 						<div class="container half">
-							<img src="./Images/mesas.jpg" alt="Servicio a Empresas" class="img"> 
+							<img src="./images/mesas.jpg" alt="Servicio a Empresas" class="img" style="background-color:  hsla(215, 62%, 93%, 1);"> 
 						</div>
 						<div class="half plain_text2 text_centered padded_vertical">
 							<p>Si te dedicas al negocio de la hosteleria, la restauración,<i class="tablet_vanish">
@@ -260,7 +235,7 @@
 							</p>
 							<br class="mobile_vanish">
 							<p class="mobile_vanish">
-								Trabajamos de lunes a domingos, ofrecemos recogida y entrega directa en el local.<br>
+								Trabajamos de lunes a sábados, ofrecemos recogida y entrega directa en el local.<br>
 								<i class="tablet_vanish">Contacta con nosotros y te enviaremos un presupuesto sin compromiso.</i>
 							</p>
 							<br class="tablet_vanish">
@@ -280,7 +255,7 @@
 								<i></i>
 								<i></i>
 								<i></i>	
-								<span><a href="#">Más info</a></span>
+								<span><a href="servicios.html#empresas" target="_self">Más info</a></span>
 							</div>
 						</div>
 					</div>
@@ -296,19 +271,24 @@
 					</div>
 					<div class="half margin_top">
 						<div class="container full footer">
-							<div class="full">
-								<a href ="#" target="-self">
+							<div class="full inicio">
+								<a href ="index.html" target="_self">
 									Inicio
 								</a>
 							</div>
-							<div class="full">
-								<a href ="#" target="-self">
+							<div class="full contact">
+								<a href ="contacto.html" target="_self">
 									Contáctanos
 								</a>
 							</div>
-							<div class="full">
-								<a href ="sobre_nosotros.html" target="-self">
+							<div class="full abous_us">
+								<a href ="sobre_nosotros.html" target="_self">
 									Sobre nosotros
+								</a>
+							</div>
+							<div class="full services">
+								<a href ="servicios.html" target="_self">
+									Servicios
 								</a>
 							</div>
 						</div>
