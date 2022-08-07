@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Arvo|Dosis|Exo+2|Quicksand|Ubuntu&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="./Css/style.css">
+		<link rel="shortcut icon" href="./images/logo_taulat.jpg" width="48px" height="48px" type="image/x-icon"/>
+		<title>Bugaderia Taulat</title>
+		<script>
+        </script>
+	</head>
+	<body class="container">
+		<div class = "container full">
+			<!-- Menu de Navegacion -->
+			<nav class="container full margin_bottom b_black font_white">
+				<div class="container full body">
+					<div class ="full">
+						<a href ="#" target="-self">
+							<h1>Lavandería Taulat</h1>
+						</a>
+					</div>
+					<div class="container centered full a_nav">
+						<div class="inicio one_forth full_margin">
+							<a href ="index.html" target="_self" class="container">
+								Inicio
+							</a>
+						</div>
+						<div class="contact one_forth full_margin">
+							<a href ="contacto.html" target="_self" class="container">
+								Contáctanos
+							</a>
+						</div>
+						<div class="abous_us one_forth full_margin">
+							<a href ="sobre_nosotros.html" target="_self" class="container">
+								Sobre nosotros
+							</a>
+						</div>
+						<div class="services one_forth full_margin">
+							<a href ="servicios.html" target="_self" class="container">
+								Servicios
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<main class="container full margin_top full_margin body">
+				<h2 class="full" id="empresas">Servicios a empresas</h2>
+				<div class="container full plain_text padded_vertical margin_top">
+					<div class="cuarto container centered padded_vertical">
+						<img class="icon" src="./images/coche.png" alt="Entrega">
+						<h3 class="full text_align_center ubuntu" style="margin-top: 5%;" >Recogida</h3>
+					</div>
+					<div class="cuarto container centered padded_vertical">
+						<img class="icon" src="./images/lavadora.png" alt="Lavado">
+						<h3 class="full text_align_center ubuntu" style="margin-top: 5%;">Lavado</h3>
+					</div>
+					<div class="cuarto container centered padded_vertical">
+						<img class="icon" src="./images/plancha.png" alt="Planchado">
+						<h3 class="full text_align_center ubuntu" style="margin-top: 5%;">Planchado</h3>
+					</div>
+					<div class="cuarto container centered padded_vertical">
+						<img class="icon" src="./images/paquete.png" alt="Entrega">
+						<h3 class="full text_align_center ubuntu" style="margin-top: 5%;">Entrega</h3>
+					</div>
+				</div>
+				<div class="container full margin_top padded">
+					<div class="container full padded">
+						<h3 class="collapsible full padded ubuntu">Recogida</h3>
+						<p class="full plain_text2 collapsible_content padded">
+							Damos un servicio de <b>recogida en vuestro local</b> a una hora acordada por ambos.
+							Se deciden los dias de recogida en función de vuestras necesidades.
+							<i class="mobile_vanish"></i>Si estais interesados, podemos dejar sacos para depositar las prendas y facilitaros el trabajo.
+							<i class="tablet_vanish">Nuestra recogida se realiza dentro de nuestro horario laboral.</i>
+						</p>
+					</div>
+					<div class="container full padded">
+						<h3 class="collapsible full padded ubuntu">Lavado</h3>
+						<p class="full plain_text2 collapsible_content  padded">
+							Ofrecemos <b>diferentes tipos de lavado</b> en función del tejido, del color, de la delicadeza de las prendas.
+							Tambien ofrecemos servicio de desinfección del <b>COVID-19</b>.<i class="mobile_vanish"> Tenemos tratamientos especiales para manchas
+								dificiles. Además lavamos la ropa de trabajo, dejandola con un aroma fresco.</i>
+						</p>
+					</div>
+					<div class="container full padded">
+						<h3 class="collapsible full padded ubuntu">Planchado</h3>
+						<p class="full plain_text2 collapsible_content  padded">
+							Proporcionamos un <b>servicio excelente de planchado</b> de sábanas, ropa de cama, servilletas, manteles, etc.<i class="mobile_vanish"> Además
+							 realizamos <b>secado de las prendas</b> como toallas, trapos, colchas, etc.</i> Y finalmente <b>doblamos las prendas</b>
+							  adaptándonos a sus necesidades y facilitandoles el trabajo.
+						</p>
+					</div>
+					<div class="container full padded">
+						<h3 class="collapsible full padded ubuntu">Entrega</h3>
+						<p class="full plain_text2 collapsible_content  padded">
+							Realizamos la entrega a una <b>hora y dia acordada por ambos</b>. Si la ropa se necesitan con urgencia,
+							 se puede <b>devolver el mismo dia de la recogida</b>.<i class="mobile_vanish"> Usamos <b>bolsas de plástico para proteger las prendas</b> y para que lleguen
+								a su destino en perfecto estado.</i><i class="tablet_vanish"> Nuestra entrega se realiza dentro de nuestro horario laboral.</i>
+						</p>
+					</div>
+					<script>
+						var collapsibles = document.getElementsByClassName("collapsible");
+						var i;
+						for(i = 0;i < collapsibles.length;++i){
+							collapsibles[i].addEventListener("click", function () {
+								this.classList.toggle("active");
+								var content = this.nextElementSibling;
+								if (content.style.display === "block") {
+									content.style.display = "none";
+								} 
+								else {
+									content.style.display = "block";
+								}
+							});
+						}						
+					</script>
+					<h2>Obtén un presupuesto sin compromiso</h2>
+					<div class="container full margin_bottom margin_top" id="disBut">
+						<div class="button style-1">		
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>	
+							<span><a href="contacto.html" target="_self">Contacto</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="container full" id="particulares">
+					<div class="full centered margin_bottom">
+						<h2>
+							Servicio a particulares
+						</h2>
+					</div>
+					<div class="container half centered">
+						<img src="./images/cesto_ropa.jpg" alt="Servicio a particulares" class="img" style="background-color:  hsla(215, 62%, 93%, 1);"> 
+					</div>
+					<div class="container half plain_text2 text_centered padded_vertical">
+						<p class="container">
+							Ofrecemos servicio de tintorería, 
+							lavado normal y lavado de edredones.
+						</p>
+						<p class="mobile_vanish">
+							Tratamos tu ropa con el mayor cuidado posible, 
+							usamos productos que no dañan el tejido para que
+							las prendas se vean como el primer dia.
+						</p>
+						<br>
+						<p class="tablet_vanish">
+							Tambien ofrecemos el mejor servicio de lavado de alfombras y edredones de todos los tamaños.<br><br>
+								<b>¡No te preocupes por ellos y recógelos al acabar el verano!</b>
+						</p>
+						<div class="container full margin_bottom margin_top" id="disBut">
+							<div class="button style-1">		
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>	
+								<span><a href="./documentos/precios.pdf" target="_self" download="Precios particulares">Descarga los precios</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container full b_grey">
+					<h2>Nuestra maquinaria</h2>
+					<div class="carousel container full">
+						<img class="img mySlides" src="./images/hs6017.jpg" alt="Hs6017" style="background-color:  hsla(215, 62%, 93%, 1);">
+						<img class="img mySlides" src="./images/hs6013.jpg" alt="Hs6013" style="background-color:  hsla(215, 62%, 93%, 1);">
+						<img class="img mySlides" src="./images/hs6008.jpg" alt="Hs6017" style="background-color:  hsla(215, 62%, 93%, 1);">
+						<img class="img mySlides" src="./images/secadora.jpg" alt="Hs6017" style="background-color:  hsla(215, 62%, 93%, 1);">
+						<img class="img mySlides" src="./images/plancha.jpg" alt="Hs6017" style="background-color:  hsla(215, 62%, 93%, 1);">
+						<h2 class="full caption">Dos lavadoras Girbau HS6017</h2>
+						<h2 class="full caption">Lavadora Girbau HS6013</h2>
+						<h2 class="full caption">Lavadora Girbau HS6008</h2>
+						<h2 class="full caption">Secadora Electroluz HB8250</h2>
+						<h2 class="full caption">Plancha industrial PB3004</h2>
+					</div>
+					<script>
+						var slideIndex = 0;
+						carousel();
+
+						function carousel() {
+						var i;
+						var x = document.getElementsByClassName("mySlides");
+						var y = document.getElementsByClassName("caption");
+						for (i = 0; i < x.length; i++) {
+							x[i].style.display = "none";
+							y[i].style.display = "none";
+						}
+						slideIndex++;
+						if (slideIndex > x.length) {slideIndex = 1}
+						x[slideIndex-1].style.display = "block";
+						y[slideIndex-1].style.display = "block";
+						setTimeout(carousel, 3500); // Change image every n seconds
+						}
+					</script>
+					
+				</div>
+            </main>
+            <!-- Footer -->
+			<footer class="container full margin_top b_black">
+				<div class="container full body centered font_white plain_text2">
+					<div class="container full margin_bottom">
+						<h1>
+							Lavandería Taulat
+						</h1>
+					</div>
+					<div class="half margin_top">
+						<div class="container full footer">
+							<div class="full inicio">
+								<a href ="index.html" target="_self">
+									Inicio
+								</a>
+							</div>
+							<div class="full contact">
+								<a href ="contacto.html" target="_self">
+									Contáctanos
+								</a>
+							</div>
+							<div class="full abous_us">
+								<a href ="sobre_nosotros.html" target="_self">
+									Sobre nosotros
+								</a>
+							</div>
+							<div class="full services">
+								<a href ="servicios.html" target="_self">
+									Servicios
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="container half left_border">
+						<div class="full text_align_center margin_bottom">
+							Calle: Taulat nº 44
+						</div>
+						<div class="full text_align_center margin_bottom">
+							Tel: 931 79 54 79
+						</div>
+						<div class="full">
+							<a href="mailto:info@bugaderiataulat.es">info@bugaderiataulat.es</a>
+						</div>
+					</div>
+					<div class="full text_align_center margin_bottom" style="margin-bottom: 20px;">
+						Pagina Web diseñada por <a style="display: inline"href="http://valkdesigns.es/">Valk Designs.</a>
+					</div>
+				</div>
+            </footer>
+        </div>
+	</body>
+</html>

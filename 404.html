@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Arvo|Dosis|Exo+2|Quicksand|Ubuntu&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="http://bugaderiataulat.es/Css/style.css">
+		<link rel="shortcut icon" href="http://bugaderiataulat.es/images/logo_taulat.jpg" width="48px" height="48px" type="image/x-icon"/>
+		<title>Bugaderia Taulat</title>
+	</head>
+	<body class="container">
+		<div class = "container full">
+			<!-- Menu de Navegacion -->
+			<nav class="container full margin_bottom b_black font_white">
+				<div class="container full body">
+					<div class ="full">
+						<a href ="#" target="-self">
+							<h1>Lavandería Taulat</h1>
+						</a>
+					</div>
+					<div class="container centered full a_nav">
+						<div class="inicio one_forth full_margin">
+							<a href ="http://bugaderiataulat.es/index.html" target="_self" class="container">
+								Inicio
+							</a>
+						</div>
+						<div class="contact one_forth full_margin">
+							<a href ="http://bugaderiataulat.es/contacto.html" target="_self" class="container">
+								Contáctanos
+							</a>
+						</div>
+						<div class="abous_us one_forth full_margin">
+							<a href ="http://bugaderiataulat.es/sobre_nosotros.html" target="_self" class="container">
+								Sobre nosotros
+							</a>
+						</div>
+						<div class="services one_forth full_margin">
+							<a href ="http://bugaderiataulat.es/servicios.html" target="_self" class="container">
+								Servicios
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<main class="container full margin_top full_margin body">
+				<div class="container full padded full_margin error b_grey">
+					<h1 class="full">Error 404</h1>
+					<h2 class="container anim disappear">¡Hemos lavado esta pagina tan bien que ha desaparecido!<br>Porfavor vuelve a la pagina principal</h2>
+				</div>
+				<script>
+					function changeText () {
+						var id = document.getElementsByClassName("anim");
+						id[0].classList.replace("disappear","appear");
+						var texts = ["¡Oh no, nos hemos pasado con la lejía!","¡Vuelve al inicio antes de que desaparezca otra vez!",
+						"¡No me quiero ir señor Stark!","¡Por favor vuelve a la página principal!¡No me hagas sufrir más!"];
+						id[0].innerText = texts[Math.floor(Math.random() * 4)];
+						setTimeout(() => { id[0].classList.replace("appear","disappear"); }, 3000);
+					}
+
+					function handler (id){
+						setTimeout(() => { changeText(id); }, 5000);
+					}
+					setInterval(changeText,8000);
+				</script>
+            </main>
+            <!-- Footer -->
+			<footer class="container full margin_top b_black">
+				<div class="container full body centered font_white plain_text2">
+					<div class="container full margin_bottom">
+						<h1>
+							Lavandería Taulat
+						</h1>
+					</div>
+					<div class="half margin_top">
+						<div class="container full footer">
+							<div class="full inicio">
+								<a href ="http://bugaderiataulat.es/index.html" target="_self">
+									Inicio
+								</a>
+							</div>
+							<div class="full contact">
+								<a href ="http://bugaderiataulat.es/contacto.html" target="_self">
+									Contáctanos
+								</a>
+							</div>
+							<div class="full abous_us">
+								<a href ="http://bugaderiataulat.es/sobre_nosotros.html" target="_self">
+									Sobre nosotros
+								</a>
+							</div>
+							<div class="full services">
+								<a href ="http://bugaderiataulat.es/servicios.html" target="_self">
+									Servicios
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="container half left_border">
+						<div class="full text_align_center margin_bottom">
+							Calle: Taulat nº 44
+						</div>
+						<div class="full text_align_center margin_bottom">
+							Tel: 931 79 54 79
+						</div>
+						<div class="full">
+							<a href="mailto:info@bugaderiataulat.es">info@bugaderiataulat.es</a>
+						</div>
+					</div>
+					<div class="full text_align_center margin_bottom" style="margin-bottom: 20px;">
+						Pagina Web diseñada por <a style="display: inline"href="http://valkdesigns.es/">Valk Designs.</a>
+					</div>
+				</div>
+            </footer>
+        </div>
+	</body>
+</html>

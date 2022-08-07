@@ -7,8 +7,10 @@
 		<link rel="shortcut icon" href="./images/logo_taulat.jpg" width="48px" height="48px" type="image/x-icon"/>
         <title>¿Quiénes Somos?</title>
         <script>
-			var w, vari = 20;
-			var counter = 1500;
+			//Contador mamadisimo
+			var w, vari = 30;
+			var iniCounter= 1600;
+			var counter = iniCounter;
 			var result = document.getElementById("Result");
 			var smalltext = document.getElementById("closed");
 			window.onbeforeunload = function () {
@@ -16,16 +18,13 @@
 			};
 			function startWorker() {
 				var hours = new Date;
-				console.log(hours.getHours());
 				if(!(hours.getHours() < 10 || hours.getHours() > 14)){
 					if (typeof(Worker) !== "undefined") {
 						if (typeof(w) == "undefined") {
 							w = new Worker("./js/counter.js");
 							w.postMessage(counter);
-
 						}
 						w.onmessage = function(event) {
-							console.log((event.data).toFixed(1));
 							counter = (event.data).toFixed(1);
 							result.innerText = counter;
 						};
@@ -35,7 +34,7 @@
 					}
 				}
 				else {
-					smalltext.innerText =  "*Ahora mismo estamos cerrados";
+					smalltext.innerText =  "'Ahora mismo estamos cerrados'";
 
 				}
 				
@@ -46,32 +45,69 @@
 				}
 			}
 
+			//Codigo descuento
+			var usedCode = false;
+			
+			function debug(){
+				window.localStorage.clear();
+			}
+
+            function checkCode(){
+				usedCode = JSON.parse(window.localStorage.getItem('usedCode'));
+				if(usedCode){
+					document.getElementById("disCodeText").innerHTML = "Código obtenido";
+				}
+			}
+			function randomCode(length) {
+				var result           = '';
+				var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+				var charactersLength = characters.length;
+				for ( var i = 0; i < length; i++ ) {
+					result += characters.charAt(Math.floor(Math.random() * charactersLength));
+				}
+   				return result;
+			}
+
+			function handlerCode() {
+				if(!usedCode){
+					document.getElementById("disCodeText").innerHTML = randomCode(5);
+					document.getElementById("smallText").innerHTML = "*guarda este codigo antes de recargar la pagina o lo perderás";
+					usedCode = true;
+					window.localStorage.setItem('usedCode', usedCode);
+				}
+			}
+
         </script>
 	</head>
-	<body class="container" unonload="saveCounter()">
+	<body class="container" unonload="saveCounter()" onload="checkCode()">
 		<div class = "container full">
 			<!-- Menu de Navegacion -->
 			<nav class="full margin_bottom b_black font_white container">
 				<div class="container full body">
 					<div class ="full">
-						<a href ="#" target="-self">
+						<a href ="#" target="_self">
 							<h1>Lavandería Taulat</h1>
 						</a>
 					</div>
 					<div class="container centered full a_nav">
 						<div class="inicio one_forth full_margin">
-							<a href ="./index.html" target="-self" class="container">
+							<a href ="index.html" target="_self" class="container">
 								Inicio
 							</a>
 						</div>
 						<div class="contact one_forth full_margin">
-							<a href ="#" target="-self" class="container">
+							<a href ="contacto.html" target="_self" class="container">
 								Contáctanos
 							</a>
 						</div>
 						<div class="abous_us one_forth full_margin">
-							<a href ="#" target="-self" class="container">
+							<a href ="sobre_nosotros.html" target="_self" class="container">
 								Sobre nosotros
+							</a>
+						</div>
+						<div class="services one_forth full_margin">
+							<a href ="servicios.html" target="_self" class="container">
+								Servicios
 							</a>
 						</div>
 					</div>
@@ -90,7 +126,7 @@
 							<i class="mobile_vanish">Nuestro objetivo es ofrecer un servicio eficiente, claro, a un buen precio y sobretodo de calidad.</i>
 							<br class="mobile_vanish">
 							<br class="mobile_vanish">
-                            <i class="tablet_vanish"><strong>La caracteristica que más nos diferencia del resto es 
+                            <i class="tablet_vanish"><strong>La característica que más nos diferencia del resto es 
                                 nuestra adaptabilidad a las necesidades del cliente.</strong></i> 
                         </p>
                     </div>
@@ -102,7 +138,7 @@
 				</div>
 				<div class="container full">
 					<h2 class="full centered">Nuestro compromiso con el medio ambiente</h2>
-					<p class="plain_text2 full">Somos concientes de que el planeta es <b>nuestro único hogar</b> y tenemos que <b>cuidarlo</b>.
+					<p class="plain_text2 full">Somos conscientes de que el planeta es <b>nuestro único hogar</b> y tenemos que <b>cuidarlo</b>.
 						<i class="mobile_vanish inherit_text"> Nuestra mayor prioridad es emitir la menor cantidad de residuos y usar la menor cantidad de agua posible sin descuidar
 							en ningún momento la calidad de nuestro servicio.
 						</i>
@@ -136,9 +172,10 @@
 				</div>
 				<script>
 					(function doStuff(){
+						var iniCounter = 1600;
 						var lastCounter = JSON.parse(window.localStorage.getItem('counter'));
-						if(lastCounter === undefined || lastCounter < 1500.0){
-							counter = 1500.0 + Math.floor(Math.random() * vari);
+						if(lastCounter === undefined || lastCounter < iniCounter){
+							counter = iniCounter + Math.floor(Math.random() * vari);
 							window.localStorage.setItem('counter', counter);
 						}
 						else {
@@ -150,6 +187,26 @@
 						startWorker();
 					})();
 				</script>
+				<div class="container full">
+					<h2>¡Obtén un codigo de descuento!</h2>
+					<div class="container full margin_bottom margin_top" id="disBut" onclick="handlerCode()">
+						<div class="button style-1">		
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>	
+							<span id="disCodeText">Código descuento</span>
+						</div>
+					</div>
+					<small id="smallText"></small>
+				</div>
+				
             </main>
             <!-- Footer -->
 			<footer class="container full margin_top b_black">
@@ -161,19 +218,24 @@
 					</div>
 					<div class="half margin_top">
 						<div class="container full footer">
-							<div class="full">
-								<a href ="Main_page.html" target="-self">
+							<div class="full inicio">
+								<a href ="index.html" target="_self">
 									Inicio
 								</a>
 							</div>
-							<div class="full">
-								<a href ="#" target="-self">
+							<div class="full contact">
+								<a href ="contacto.html" target="_self">
 									Contáctanos
 								</a>
 							</div>
-							<div class="full">
-								<a href ="#" target="-self">
+							<div class="full abous_us">
+								<a href ="sobre_nosotros.html" target="_self">
 									Sobre nosotros
+								</a>
+							</div>
+							<div class="full services">
+								<a href ="servicios.html" target="_self">
+									Servicios
 								</a>
 							</div>
 						</div>
